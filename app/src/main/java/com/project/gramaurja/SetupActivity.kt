@@ -7,18 +7,16 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 
 class SetupActivity : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // 1. Initialize SharedPreferences
-        val sharedPref = getSharedPreferences("GramaUrjaPrefs", Context.MODE_PRIVATE)
-
-        /*
-           NOTE: We removed the "Auto-Skip" logic here.
-           Now, every time the app opens, it will stay on this page
-           so you can enter your name.
-        */
+        val pref = getSharedPreferences("GramaUrjaPrefs", Context.MODE_PRIVATE)
+        // Auto-login if data exists
+        if (pref.contains("farmer_name")) {
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+            return
+        }
 
         setContentView(R.layout.activity_setup)
 
@@ -26,23 +24,16 @@ class SetupActivity : AppCompatActivity() {
         val spinner = findViewById<Spinner>(R.id.setupZoneSpinner)
         val btnSave = findViewById<Button>(R.id.btnSaveProfile)
 
-        // Populate Spinner with Villages
         val villages = listOf("Zone_A", "Zone_B", "Zone_C")
-        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, villages)
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spinner.adapter = adapter
+        spinner.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, villages)
 
-        // 2. Save Button Logic
         btnSave.setOnClickListener {
             val name = etName.text.toString().trim()
-            val zone = spinner.selectedItem.toString()
-
             if (name.isNotEmpty()) {
-                val editor = sharedPref.edit()
-                editor.putString("farmer_name", name)
-                editor.putString("farmer_zone", zone)
-                editor.commit() // Using commit for immediate saving
-
+                pref.edit()
+                    .putString("farmer_name", name)
+                    .putString("farmer_zone", spinner.selectedItem.toString())
+                    .apply()
                 startActivity(Intent(this, MainActivity::class.java))
                 finish()
             } else {

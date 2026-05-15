@@ -1,58 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="30dp"
     android:gravity="center"
-    android:background="@color/status_bg_light">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Welcome to Grama-Urja"
-        android:textSize="26sp"
-        android:textStyle="bold"
-        android:textColor="@color/primary_blue" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Let's set up your profile"
-        android:textSize="16sp" />
-
-    <EditText
-        android:id="@+id/etFarmerName"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="40dp"
-        android:hint="Enter Your Name"
-        android:padding="15dp"
-        android:background="@android:drawable/edit_text" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="start"
-        android:text="Select Your Village/Zone:" />
-
-    <Spinner
-        android:id="@+id/setupZoneSpinner"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="10dp"
-        android:background="@android:drawable/btn_dropdown" />
-
-    <Button
-        android:id="@+id/btnSaveProfile"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_marginTop="50dp"
-        android:text="SAVE &amp; PROCEED"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:backgroundTint="@color/primary_blue" />
-
+    android:background="@color/bg_light">
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="Welcome to Grama-Urja" android:textSize="26sp" android:textStyle="bold" android:textColor="@color/primary_blue" />
+    <EditText android:id="@+id/etFarmerName" android:layout_width="match_parent" android:layout_height="60dp"
+        android:layout_marginTop="40dp" android:hint="Enter Your Name" android:padding="15dp" android:background="@android:drawable/edit_text" />
+    <Spinner android:id="@+id/setupZoneSpinner" android:layout_width="match_parent" android:layout_height="60dp" android:layout_marginTop="20dp" />
+    <Button android:id="@+id/btnSaveProfile" android:layout_width="match_parent" android:layout_height="70dp"
+        android:layout_marginTop="50dp" android:text="SAVE &amp; PROCEED" android:backgroundTint="@color/primary_blue" />
 </LinearLayout>

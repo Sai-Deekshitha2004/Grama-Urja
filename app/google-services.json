@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "952628658703",
-    "project_id": "grama-urja-project",
-    "storage_bucket": "grama-urja-project.firebasestorage.app"
+    "project_number": "5119134391",
+    "project_id": "grama-urja-final",
+    "storage_bucket": "grama-urja-final.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:952628658703:android:d0d9a00fb6f50b2620997a",
+        "mobilesdk_app_id": "1:5119134391:android:ea700d30894a3e4dff1b32",
         "android_client_info": {
           "package_name": "com.project.gramaurja"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBXCEjCWATfszsKzGpO7-svLd03pPiIOnc"
+          "current_key": "AIzaSyDd5KP3p_lhA5sWoWX0GFM7v1IISQLDHhQ"
         }
       ],
       "services": {
